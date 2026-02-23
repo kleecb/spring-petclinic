@@ -26,5 +26,5 @@ jobs:
           java-version: 8
           distribution: "temurin"
       - name: Install dependencies
-        run: pip install launchable
-      - run: "launchable verify"
+        run: pipx install smart-tests-cli~=2.0
+      - run: "smart-tests verify"
