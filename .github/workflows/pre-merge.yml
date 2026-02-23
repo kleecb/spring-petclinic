@@ -42,7 +42,7 @@ jobs:
           smart-tests subset maven --session @session.txt --use-case one-commit --get-tests-from-guess --target 50% > smart-tests-subset.txt
           cat smart-tests-subset.txt
       - name: Test
-        run: mvn test -Dsurefire.includesFile=smart-tests-subset.txt
+        run: mvn test -DincludesFile=smart-tests-subset.txt
       - name: Smart Tests record tests
         if: always()
-        run: smart-tests record tests maven --session @session.txt ./**/target/surefire-reports
+        run: smart-tests record tests --allow-test-before-build --session $(cat session.txt) maven ./**/target/surefire-reports
