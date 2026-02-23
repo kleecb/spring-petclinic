@@ -1,4 +1,4 @@
-name: Launchable Demo
+name: Smart Tests Demo
 
 env:
   LAUNCHABLE_TOKEN: ${{ secrets.LAUNCHABLE_TOKEN_MAVEN }}
