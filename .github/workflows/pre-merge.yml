@@ -32,7 +32,7 @@ jobs:
         run: 'launchable record build --name "$GITHUB_RUN_ID"'
       - name: "Subset and Test - Linux"
         run: |
-          launchable record session --build $GITHUB_RUN_ID > session.txt
+          launchable record session --build $GITHUB_RUN_ID --test-suite my-test-suite > session.txt
           mvn test-compile
-          launchable subset --session $(cat session.txt) --target 80% maven --scan-test-compile-lst > launchable-subset.txt
+          launchable subset --session $(cat session.txt) --target 80% maven --use-case one-commit --get-tests-from-guess > launchable-subset.txt
           mvn test -Dsurefire.includesFile=launchable-subset.txt
