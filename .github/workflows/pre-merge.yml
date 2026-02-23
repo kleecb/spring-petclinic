@@ -26,5 +26,7 @@ jobs:
           java-version: 8
           distribution: "temurin"
       - name: Install dependencies
-        run: pipx install smart-tests-cli~=2.0
-      - run: "smart-tests verify"
+        run: pip install launchable
+      - run: "launchable verify"
+      - name: Record commits and build
+        run: 'launchable record build --name "$GITHUB_RUN_ID" --source ..
