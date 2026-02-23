@@ -22,10 +22,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-      - name: Set up JDK 1.8
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: 11
+          java-version: 21
+          distribution: "adopt"
       - name: Install dependencies
         run: pip install --user --upgrade smart-tests-cli~=2.0
       - name: Smart Tests verify
