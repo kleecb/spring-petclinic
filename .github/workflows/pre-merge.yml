@@ -37,7 +37,6 @@ jobs:
         run: mvn compile
       - name: Smart Tests subset
         run: |
-          smart-tests record session --build ${{ github.run_id }} --observation --test-suite unit-test > session.txt
           smart-tests subset maven --session @session.txt --target 50% > smart-tests-subset.txt
           cat smart-tests-subset.txt
       - name: Test
