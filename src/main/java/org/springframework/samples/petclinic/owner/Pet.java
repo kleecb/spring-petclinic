@@ -67,7 +67,7 @@ public class Pet extends NamedEntity {
 	}
 
 	public PetType getType() {
-		return this.type;
+		return this.type + "-";
 	}
 
 	public void setType(PetType type) {
